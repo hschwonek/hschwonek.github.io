@@ -1,1 +1,103 @@
+<!DOCTYPE html>
+<html>
+<body>
 
+<h1>Plant Image Classifier</h1>
+<h3>Sreeram Danda and Hana Schwonek</h3>
+<h2>Motivation</h2>
+<p>With the growth of technology people seem less connected to nature.  
+    We wanted to devise a way for people to integrate nature with their technology.  
+    We believe that educating people about plants is an easy way to get them more interested in nature. 
+    The ever-growing presence of technology in society seemingly diminishes the time that we spend exploring the wilderness. 
+    Just walking around outside, you can see parents glaring at their phones with kids strapped to strollers with an iPad in hand. 
+    In an attempt to encourage curiosity in nature, we are taking a simple approach: giving some meaning to the plants that we see every day but know nothing about. 
+    Although the model will not explain deeply what the plant one is looking at is, it attempts to 
+    invoke curiosity by attaching a name to the things we do not normally take time to absorb.
+</p>
+
+<h2>Current Solutions</h2>
+<p>There are some solutions available to many users through apps. Some examples include PictureThis and Plantsnap. 
+    These apps use a large database to recognize many different plants with reasonable accuracy. 
+    Additionally, there are machine learning algorithms trained, for example, by the UK Centre for 
+    Ecology and Hydrology to locate invasive plant species.
+    For this project, we considered the <a href="https://github.com/plantnet/PlantNet-300K">
+	Pl@ntNet-300k model</a> to be the state-of-the-art 
+    solution, as it aims to do something similar to us and has high accuracy. 
+</p>
+<h2>Our Approach</h2>
+<p>Our approach to solving this problem is to build a machine learning model to evaluate an image
+     and classify it as a plant species. At the fundamental level the way we train a model is by 
+     supplying the computer with a large set of images and and the model itself. By iterating over 
+     these images a computer can identify patterns that help classify images to a much more accurate 
+     level than a person can. We are presenting two pretrained models and their accuracy and a self 
+     trained model to show the challenges and difficulties presented in classifying plants. We used a
+      dataset called <a href="https://zenodo.org/record/5645731#.Y5PxqXZKg2x" >Pl@tNet-300k</a>, 
+      which is composed of 300,000 plant images belonging to 1081 species, to train our model.  
+    </p>
+
+<h2>Results</h2>
+<p>We tested two pretrained models- ResNet and AlexNet- and our own self-trained model on a 
+    set of five images of plants. The results varied quite a bit between the models.  
+    AlexNet performed best by correctly identifying every image.  The pretrained ResNet model 
+    only correctly identified one image, however it was able to identify most images correctly 
+    as a second or third option.  
+    <br></br>
+    Our model was able to correctly identify one image.  
+    Its inaccuracy can be explained by the time cost of training even a simple model like resnet. 
+    We trained our model only on one epoch which took around 2-16 hours, not including the time to test
+    and evaluate each epoch. Ideally, we would have trained on 30 epochs which is a huge time and 
+    resource commitment given the resources available to us. Our model prioritizes speed at the 
+    cost of accuracy.  This is more useful if one needs to quickly identify a small subset of uniquely identifiable plants.  
+    <br></br>
+	<h3>Sample Images</h3>
+	<p>We tested the five images below on each model.</p>
+    <img src="1.jpg"width="128" height="128"> 
+    <img src="2.jpg"width="128" height="128"> 
+	<img src="3.jpg" width="128" height="128">
+	<img src="4.jpg" width="128" height="128">
+    <img src="5.jpg" width="128" height="128">
+    <h3>Model Comparison</h3>
+    <p>We got the following results by testing the AlexNet, ResNet, and our own model on the images.</p>
+    <img src="alexnet_prediction.png" width="325" height="350">
+    <img src="resnet_prediction.png" width="325" height="350">
+    <img src="custom_prediction.png" width="325" height="350">
+</p>
+<h2>Timeline of Project</h2>
+
+<ul>
+  <li><strong>October 6th</strong>: Choose dataset of images to use to train the model on</li>
+  <li><strong>November 10th</strong>: Define a model that can take in the dataset and train itself </li>
+  <li><strong>November 30th</strong>: Write a function to test the pre-trained Pl@ntNet models on sample images</li>
+  <li><strong>December 5th</strong>: Train our model on the dataset and test the accuracy of the model on sample images</li>
+</ul>
+
+<h2>Problems Encountered</h2>
+<p>
+<ul>
+    <li>The documentation for the Pl@ntNet models is not beginner friendly. 
+    This led to confusion on how to begin using their models and on how to train a model on the dataset.</li>
+    <li>The dataset of images was extremely large, and training a model on even on epoch took hours.
+        This caused extreme difficulty in getting a highly accurate model because training one on the dataset
+        would have taken a huge amount of time and computing resources. 
+    </li>
+</ul>
+</p>
+<h2>Final Thoughts</h2>
+<p>Since we focused on identifying species of plants, which there are thousands of, it required a 
+    very large amount of data to train the model with to correctly identify each species. If we 
+    were to redo this project, we would choose to broader classification method such as identifying 
+    a plant kingdom for the images. This would narrow down the possible number of outputs we need to be 
+    accurate for and lessen the time required to train the models. 
+    In the future, this model could be used in an app on a person's phone to allow them to easily 
+    identify plants in real life.  This would a solution to the initial problem we identified in 
+    getting people to interact with nature by offering a bridge between technology and nature.
+    </p>
+<h2>Project Materials</h2>
+<p>
+<ul>
+<li><a href="https://docs.google.com/presentation/d/1BcembQyu8QEmYNecL2MsqoXbHAHd9bYHJtKOG-zK4XA/edit?usp=sharing">Presentation Slides</li>
+<li><a href="https://github.com/hschwonek/639project">Project code on Github</a></li>
+</ul>
+</p>
+</body>
+</html>
