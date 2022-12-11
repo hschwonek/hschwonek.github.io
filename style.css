@@ -1,0 +1,110 @@
+/*The Box Model Fix*/
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+    font-family: Poppins; /*Set global font*/
+}
+
+/*HEADER --------------------------------------------------*/
+.header{
+    height: 80px;
+    line-height: 80px;
+    margin-bottom: 40px;
+}
+
+.title{
+    height: inherit;
+    float: left;
+    width: 50%;
+    padding-left: 2%;
+}
+
+.navbar{
+    height: inherit;
+    width: 50%;
+    float: right;
+}
+
+.navbar a{
+    float: right;
+    margin-right: 10%;
+    text-decoration: none;
+    color: #000000;
+}
+
+/*MAIN --------------------------------------------------*/
+
+.banner{
+    background-image: url(/images/leaves.jpg);
+    background-size: cover;
+    background-color: #949494;
+    background-blend-mode: multiply;
+    height: 400px;
+    line-height: 400px;
+    width:100%;
+    vertical-align: center;
+    text-align: center;
+    color: white;
+}
+
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 18px; /* <-- adjust this */
+}
+
+.motivation{
+    height: auto;
+    width: 46%;
+    margin: 1% 2%;
+    line-height: 200%;
+    float: left;
+}
+
+.divider, .divider2, .divider3{
+    height: 1px;
+    width: 100%;
+    margin-bottom: 1%;
+    float: left;
+    background-color: #000000;
+}
+
+.divider2{
+    margin-top: 2%;
+}
+
+.divider3{
+    margin-top: 1%;
+}
+
+.current_solutions {
+    height: auto;
+    width: 46%;
+    margin: 1% 2%;
+    line-height: 200%;
+    float: right;
+}
+
+.our_approach, .results, .timeline, .problems, .final_thoughts, .materials{
+    height: auto;
+    width: 96%;
+    margin: 0% 2%;
+    line-height: 200%;
+    float: left;
+}
+
+.sample_images, .timeline{
+    float: left;
+    width: 41%;
+    margin: 0px;
+    margin-left: 2%;
+}
+
+.model_comparison, .problems{
+    float: right;
+    width: 55%;
+    margin: 0px;
+    margin-right: 2%;
+}
